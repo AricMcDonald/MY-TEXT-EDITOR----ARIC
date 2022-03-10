@@ -1,6 +1,6 @@
 import { Workbox } from 'workbox-window';
 import Editor from './editor';
-import './database';
+import { getDb, putDb } from './database';
 import '../css/style.css';
 
 const main = document.querySelector('#main');
@@ -20,6 +20,7 @@ const loadSpinner = () => {
 const editor = new Editor();
 
 if (typeof editor === 'undefined') {
+
   loadSpinner();
 }
 
@@ -31,3 +32,7 @@ if ('serviceWorker' in navigator) {
 } else {
   console.error('Service workers are not supported in this browser.');
 }
+
+
+
+console.log('leading ');
