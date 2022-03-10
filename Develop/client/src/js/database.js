@@ -16,10 +16,11 @@ const initdb = async () =>
 export const putDb = async (content) => console.error('putDb not implemented');
 const jateDb = await openDB('jate', 1);
 const texas = jateDb.transaction('jate', 'readwrite');
-const storeit = texas.objectStore('contact');
+const storeit = texas.objectStore('jate');
 const requestit = storeit.add({  });
 const result = await request;
   console.log('🚀 - SAVED in the database', result);
+  
 
 
 
@@ -29,5 +30,12 @@ const result = await request;
 
 // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => console.error('getDb not implemented');
+const request = storeit.getAll();
+const results = await request;
+  console.log('result.value', results);
+  
+
+
+
 
 initdb();
