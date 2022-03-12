@@ -19,7 +19,7 @@ const jateDb = await openDB('jate', 1);
 const texas = jateDb.transaction('jate', 'readwrite');
 const store = texas.objectStore('jate');
 console.log("data was stored when editor lost focus")
-const requestit = store.put ({content:content});
+const requestit = store.put ({id: 1, value:content});
 //store.pu
 const result = await requestit;
   console.log('🚀 - SAVED in the database', result);
